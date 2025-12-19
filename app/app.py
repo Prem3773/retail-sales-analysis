@@ -22,12 +22,15 @@ st.set_page_config(
 # Load data files
 # ------------------------------------------------------------
 
-# Get base directory (project root)
-BASE_DIR = os.path.abspath(os.path.join(os.getcwd(), ".."))
+# Get absolute path of current file (app.py)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Define file paths
+# Define correct data paths
 retail_data_path = os.path.join(BASE_DIR, "data", "processed", "cleaned_retail.csv")
 customer_data_path = os.path.join(BASE_DIR, "data", "processed", "customer_segments.csv")
+
+
+
 
 # Load datasets
 retail_df = pd.read_csv(retail_data_path)
